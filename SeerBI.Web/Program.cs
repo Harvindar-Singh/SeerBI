@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using SeerBI.Web.Areas.Identity.Data;
 using SeerBI.Web.Data;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("SeerBIWebContextConnection") ?? throw new InvalidOperationException("Connection string 'SeerBIWebContextConnection' not found.");
@@ -7,7 +8,7 @@ var connectionString = builder.Configuration.GetConnectionString("SeerBIWebConte
 builder.Services.AddDbContext<SeerBIWebContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<SeerBIWebUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<SeerBIWebUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<SeerBIWebContext>();
 
 // Add services to the container.
@@ -34,5 +35,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapRazorPages();
 app.Run();
