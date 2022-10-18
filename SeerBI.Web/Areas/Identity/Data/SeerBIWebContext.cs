@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SeerBI.Web.Areas.Identity.Data;
+using SeerBI.Web.Models;
 
 namespace SeerBI.Web.Data;
 
 public class SeerBIWebContext : IdentityDbContext<SeerBIWebUser>
 {
+
     public SeerBIWebContext(DbContextOptions<SeerBIWebContext> options)
         : base(options)
     {
