@@ -22,6 +22,8 @@ public class SeerBIWebContext : IdentityDbContext<SeerBIWebUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
         builder.ApplyConfiguration(new SeerBIWebUserEntityConfiguration());
+        string[] Category = { "business", "users" };
+        List<string> categorylist = new List<string>(Category);
     }
 }
 public class SeerBIWebUserEntityConfiguration : IEntityTypeConfiguration<SeerBIWebUser>
@@ -30,5 +32,6 @@ public class SeerBIWebUserEntityConfiguration : IEntityTypeConfiguration<SeerBIW
     {
         builder.Property(u => u.FirstName).HasMaxLength(255);
         builder.Property(u => u.LastName).HasMaxLength(255);
+      
     }
 }
