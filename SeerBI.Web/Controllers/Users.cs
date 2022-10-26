@@ -19,9 +19,9 @@ namespace SeerBI.Web.Controllers
         public ActionResult Index()
         {
             List<SeerBIWebUser> t = _context.Users.ToList();
-            //ViewBag.UsersList = t;
+           //ViewData["EmployeeData"] = t;
 
-            return View(t);
+            return View();
         }
 
         // GET: Users/Details/5
