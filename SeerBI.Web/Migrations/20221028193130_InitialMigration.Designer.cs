@@ -12,8 +12,8 @@ using SeerBI.Web.Data;
 namespace SeerBI.Web.Migrations
 {
     [DbContext(typeof(SeerBIWebContext))]
-    [Migration("20221025211628_addcategoryusers")]
-    partial class addcategoryusers
+    [Migration("20221028193130_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
