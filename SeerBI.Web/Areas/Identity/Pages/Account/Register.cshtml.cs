@@ -86,7 +86,7 @@ namespace SeerBI.Web.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Category")]
            
-            public category categorylist { get; set; }
+            public string categorylist { get; set; }
             
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
