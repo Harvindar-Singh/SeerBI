@@ -60,6 +60,17 @@
 
                     }, "Select Category")
             </div>
+            <div class="form-control" Where(m => m.category == "Users"))>
+               
+               
+              @Html.DropDownList("Input.professionlist", new List<SelectListItem>{
+
+                    new SelectListItem{ Text="Business Intelligence", Value="Business Intelligence"},
+
+                    new SelectListItem{ Text="Machine Learning", Value="Machine Learning"}
+
+                    }, "Select Profession")
+            </div>
 
             <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>

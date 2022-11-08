@@ -13,6 +13,7 @@ public class SeerBIWebUser : IdentityUser
     public string LastName { get; set; }
 
     public string category { get; set; }
-    
+    public string profession { get; set; }
+
 }
 

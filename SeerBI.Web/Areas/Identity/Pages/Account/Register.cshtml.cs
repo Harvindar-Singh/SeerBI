@@ -19,7 +19,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using SeerBI.Web.Areas.Identity.Data;
-using SeerBI.Web.Areas.Identity.Enums;
+
 
 namespace SeerBI.Web.Areas.Identity.Pages.Account
 {
@@ -87,7 +87,12 @@ namespace SeerBI.Web.Areas.Identity.Pages.Account
             [Display(Name = "Category")]
            
             public string categorylist { get; set; }
-            
+
+            [Required]
+            [Display(Name = "Profession")]
+
+            public string professionlist { get; set; }
+
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
@@ -136,6 +141,7 @@ namespace SeerBI.Web.Areas.Identity.Pages.Account
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
                 user.category = Input.categorylist.ToString();
+                user.profession = Input.professionlist.ToString();
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
