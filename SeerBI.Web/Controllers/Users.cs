@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SeerBI.Web.Areas.Identity.Data;
 using SeerBI.Web.Data;
@@ -14,7 +15,7 @@ namespace SeerBI.Web.Controllers
             _context = context;
         }
 
-
+        [Authorize]
         // GET: Users
         public ActionResult Index()
         {
