@@ -1,0 +1,30 @@
+﻿@page
+@model SeerBI.Web.Areas.Identity.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact page";
+}
+<h1>Contact us if you want to our data science or machine learning facilities</h1>
+
+@if(Model.hasData)
+{
+    <p>Hello @Model.firstname @Model.lastname</p>
+    <p>We received your following message correctly:</p>
+    <p>@Model.message</p>
+
+
+}
+<div>
+   <form method="post">
+        <label> for="fname"> First Name</label><br>
+        <input type="text" id="fname" name="firstname"><br>
+
+        <label> for="lname"> Lastt Name</label><br>
+        <input type="text" id="lname" name="lastname"><br>
+
+         <label> for="message">Message</label><br>
+         <textarea id="message" name="message" style=" height:200px"></textarea><br>
+
+         <input type="submit" value=" Submit">
+   </form>
+
+</div>
