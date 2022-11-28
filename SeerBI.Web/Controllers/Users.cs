@@ -25,6 +25,16 @@ namespace SeerBI.Web.Controllers
             return View(t);
         }
 
+        [Authorize]
+        // GET: Users
+        public ActionResult Company()
+        {
+            List<SeerBIWebUser> t = _context.Users.ToList();
+            ViewData["EmployeeData"] = t;
+
+            return View(t);
+        }
+
         // GET: Users/Details/5
         public ActionResult Details(int id)
         {

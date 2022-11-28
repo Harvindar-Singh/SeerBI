@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SeerBI.Web.Areas.Identity.Data.SeerBIWebUser>
+
+@{
+    ViewBag.Title = "company";
+}
+ <h1> Business porfiles </h1>
+
+
+<table class="table">
+     
+    @foreach(var item in Model.Where(m => m.category == "Business"))
+    {
+         <tr bgcolor="#7bd1db">
+              <td>
+                
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+
+        </tr>
+        }
+    </table>
