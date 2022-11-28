@@ -72,6 +72,8 @@ namespace SeerBI.Web.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            public string _profession;
+
             [Required]
             [StringLength(255, ErrorMessage = "The first name field should have a maximum of 255 caracters")]
             [Display(Name = "FirstName")]
@@ -88,10 +90,22 @@ namespace SeerBI.Web.Areas.Identity.Pages.Account
            
             public string categorylist { get; set; }
 
-            [Required]
             [Display(Name = "Profession")]
-
-            public string professionlist { get; set; }
+            public string? professionlist 
+            {
+                get => _profession;
+                set 
+                {
+                    if (value == null)
+                    {
+                        _profession = null;
+                    }
+                    else
+                    {
+                        _profession = value.ToString();
+                    }
+                } 
+            }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -137,11 +151,10 @@ namespace SeerBI.Web.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
                 user.category = Input.categorylist.ToString();
-                user.profession = Input.professionlist.ToString();
+                user.profession = Input.professionlist == null ? user.category == "Bussiness" ? null : "Business Intelligence" : Input.professionlist.ToString();
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
