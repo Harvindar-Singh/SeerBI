@@ -16,14 +16,26 @@ namespace SeerBI.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(IFormCollection collection)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+                 public bool hasData = false;
+        public string firstname = "";
+        public string lastname = "";
+        public string message = "";
+
+
+        public void OnGet()
+        {
         }
+        public void onPost()
+        {
+
+
+            hasData = true;
+            firstname = Request.Form["firstname"];
+            lastname = Request.Form["lastname"];
+            message = Request.Form["message"];
+
+
+        }
+    }
     }
 }
