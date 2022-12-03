@@ -25,9 +25,21 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Business_Intelligence" asp-action="Index">Business Intelligence</a>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Machine_Learning" asp-action="Index">Machine Learning</a>
-                        </li>
+                        </li>*@
+                          <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Machine_Learning" asp-action="Index">Machine Learning</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Machine_Learning" asp-action="ComputerVision">Computer Vision</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Machine_Learning" asp-action="NLP">Natural Language Processing(NLP)</a></li>
+                       
+                      </ul>
+                    </li>
+
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="News" asp-action="Index">News</a>
                         </li>
