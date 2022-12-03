@@ -3,10 +3,34 @@
 @{
     ViewBag.Title = "company";
 }
- <h1> Business porfiles </h1>
-
-
+<h1> Registered Companies </h1>
 <table class="table">
+    <thead bgcolor="#0d9ee0">
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+           
+
+           
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+
      
     @foreach(var item in Model.Where(m => m.category == "Business"))
     {
@@ -28,4 +52,5 @@
 
         </tr>
         }
+        <tbody>
     </table>

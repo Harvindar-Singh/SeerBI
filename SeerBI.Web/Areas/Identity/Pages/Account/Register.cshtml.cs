@@ -80,7 +80,7 @@ namespace SeerBI.Web.Areas.Identity.Pages.Account
             public string FirstName { get; set; }
 
 
-            [Required]
+            
             [StringLength(255, ErrorMessage = "The last name field should have a maximum of 255 caracters")]
             [Display(Name = "LastName")]
             public string LastName { get; set; }

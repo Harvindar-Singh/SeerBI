@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SeerBI.Web.Data;
 
@@ -11,9 +12,10 @@ using SeerBI.Web.Data;
 namespace SeerBI.Web.Migrations
 {
     [DbContext(typeof(SeerBIWebContext))]
-    partial class SeerBIWebContextModelSnapshot : ModelSnapshot
+    [Migration("20221203122758_LastnameNullable")]
+    partial class LastnameNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
