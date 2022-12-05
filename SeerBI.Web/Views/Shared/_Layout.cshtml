@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-danger  border-bottom box-shadow mb-3 sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SeerBI</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -20,30 +20,49 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Business_Intelligence" asp-action="Index">Business Intelligence</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Business_Intelligence" asp-action="Index">Business Intelligence</a>
+                        </li>
+                        @*<li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Machine_Learning" asp-action="Index">Machine Learning</a>
+                        </li>*@
+                          <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Machine Learning
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Machine_Learning" asp-action="Index">Machine Learning</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Machine_Learning" asp-action="ComputerVision">Computer Vision</a></li>
+                        <li><a class="dropdown-item" asp-area="" asp-controller="Machine_Learning" asp-action="NLP">Natural Language Processing(NLP)</a></li>
+                       
+                      </ul>
+                    </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="News" asp-action="Index">News</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Machine_Learning" asp-action="Index">Machine Learning</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="Index">Job Seekers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index">News</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Users" asp-action="Company">Company</a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Contact_us" asp-action="Contact">Contact us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Unlock Your Data</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Users</a>
+                            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Privacy">Unlock Your Data</a>
                         </li>
                     </ul>
                 </div>
+                
                <partial name="_LoginPartial"/>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container" >
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -51,8 +70,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - SeerBI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+           Copyright &copy; @System.DateTime.Now.Year -Powered by SeerBI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+           </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

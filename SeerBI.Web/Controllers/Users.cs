@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SeerBI.Web.Areas.Identity.Data;
 using SeerBI.Web.Data;
@@ -14,12 +15,22 @@ namespace SeerBI.Web.Controllers
             _context = context;
         }
 
-
+        [Authorize]
         // GET: Users
         public ActionResult Index()
         {
             List<SeerBIWebUser> t = _context.Users.ToList();
            ViewData["EmployeeData"] = t;
+
+            return View(t);
+        }
+
+        [Authorize]
+        // GET: Users
+        public ActionResult Company()
+        {
+            List<SeerBIWebUser> t = _context.Users.ToList();
+            ViewData["EmployeeData"] = t;
 
             return View(t);
         }

@@ -10,6 +10,16 @@ namespace SeerBI.Web.Controllers
         {
             return View();
         }
+        // GET: Computer Vision
+        public ActionResult ComputerVision()
+        {
+            return View();
+        }
+        // GET: Natural Language Processing
+        public ActionResult NLP()
+        {
+            return View();
+        }
 
         // GET: Machine_Learning/Details/5
         public ActionResult Details(int id)

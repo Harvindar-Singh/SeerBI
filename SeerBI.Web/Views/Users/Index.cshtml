@@ -4,8 +4,29 @@
 @{
     ViewBag.Title = "Index";
 }
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
 
-<h1> Users porfiles </h1>
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+<h1> Registered Users </h1>
 
 <table class="table">
     <thead bgcolor="#0d9ee0">
@@ -36,7 +57,7 @@
         </tr>
     </thead>
     <tbody>
-<table class="table">
+
      
     @foreach(var item in Model.Where(m => m.category == "Users"))
     {
@@ -64,35 +85,8 @@
 
         </tr>
         }
+         <tbody>
     </table>
-    <tbody>
-    <h1> Business porfiles </h1>
-
-
-<table class="table">
-     
-    @foreach(var item in Model.Where(m => m.category == "Business"))
-    {
-         <tr bgcolor="#7bd1db">
-              <td>
-                
-                @Html.DisplayFor(modelItem => item.FirstName)
-            </td>
-            <td>
-                
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-             <td>
-                @Html.DisplayFor(modelItem => item.category)
-            </td>
-
-        </tr>
-        }
-    </table>
-
-
-
+   
+    
 
